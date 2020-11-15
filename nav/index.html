@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://use.fontawesome.com/d21e9ac98b.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <!-- LOGO FOR DESKTOP -->
+        <div class="logo">
+            Logo
+        </div>
+        <!-- MOBILE BAR WITH BURGER MENU -->
+        <div class="mobilebar">
+              <!-- LOGO FOR MOBILE -->
+            <div class="mobilelogo">
+                Logo
+            </div>
+            <div class="burger" onclick="toggleMenu()">
+                <span class="fas fa-bars"></span>
+            </div>
+        </div>
+        <!-- MENU -->
+        <nav class="nav">
+            <!-- FIRST LEVEL LINKS -->
+            <li class="fl">
+                <a class="fl" href="#">Link 1</a>
+            </li>
+            <li class="fl">
+                <a class="fl" href="#">Link 2</a>
+            </li>
+            <li class="fl">
+                <!-- FIRST DROPDOWN -->
+                <a class="fl" onclick="toggleDrop()">Dropdown <span class="fas fa-angle-down"></span></a>
+                <!-- DROPDOWN LIST -->
+                <ul class="dropdown">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </li>
+            <li class="fl">
+                <!-- FIRST DROPDOWN -->
+                <a class="fl" onclick="toggleDrop()">Dropdown 2 <span class="fas fa-angle-down"></span></a>
+                <!-- DROPDOWN LIST -->
+                <ul class="dropdown">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <!-- DROPDOWN AS LINK -->
+                    <li class="sidedroplink">
+                        <a onclick="toggleDrop()">Dropdown 3 <span class="fas fa-angle-down"></span></a>
+                         <!-- SIDE DROPDOWN LIST -->
+                        <ul class="sidedrop">
+                            <li>
+                                <a href="#">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Link 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </li>
+            <li class="fl">
+                <a class="fl" href="#">Link 3</a>
+            </li>
+        </nav>
+    </div>
+
+</body>
+
+</html>

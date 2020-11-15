@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    font-family: "Mukta", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes swipe-down {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.fas {
+    font-family: "FontAwesome";
+    margin-left: 5px;
+    pointer-events: none;
+}
+.header {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    .logo {
+        color: #fff;
+    }
+    .mobilebar {
+        display: none;
+    }
+    nav {
+        display: flex;
+        list-style: none;
+        .dropdown,
+        .sidedrop {
+            display: none;
+            background: #333;
+            position: absolute;
+            list-style: none;
+            &:hover {
+                display: block;
+            }
+        }
+        .dropdown {
+            top: 100%;
+            right: 0;
+            min-width: 12rem;
+            li:not(:last-child) {
+                border-bottom: 1px solid #555;
+            }
+            .sidedrop {
+                top: 0;
+                right: 100%;
+                min-width: 10rem;
+            }
+        }
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                padding: 0.8rem 1.4rem;
+                cursor: pointer;
+
+                &.fl {
+                    padding: 1.2rem 1.2rem;
+                    margin-left: 5px;
+                }
+                &:hover ~ .dropdown,
+                &:hover ~ .sidedrop {
+                    display: block;
+                    animation: fade-in 0.3s ease-in;
+                }
+            }
+            &:hover {
+                background-color: red;
+            }
+            &.fl,
+            &.sidedroplink {
+                position: relative;
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    .header {
+        padding: 0;
+        flex-direction: column;
+        .logo {
+            display: none;
+        }
+        .mobilebar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1.2rem 3rem;
+            background-color: rgba(34, 34, 34, 0.507);
+            color: #fff;
+            .burger {
+                &:hover {
+                    cursor: pointer;
+                }
+                .fas.fa-bars {
+                    font-size: 1.3rem;
+                    &.active:before {
+                        content: "\f00d";
+                    }
+                }
+            }
+        }
+        nav {
+            display: none;
+            animation: fade-in 0.4s ease-in !important;
+            flex-direction: column;
+            width: 100%;
+            .dropdown,
+            .sidedrop {
+                position: static;
+                display: none;
+                &.active {
+                    display: block !important;
+                    animation: fade-in 0.4s ease-in !important;
+                }
+            }
+            .dropdown {
+                li:not(:last-child) {
+                    border-bottom: none;
+                }
+                .sidedrop {
+                    a {
+                        padding-left: 5rem;
+                    }
+                }
+            }
+            li {
+                &:hover {
+                    background-color: transparent;
+                }
+                a {
+                    border-bottom: 1px solid #555;
+                    padding-left: 3rem;
+                    &.active {
+                        background-color: #555;
+                    }
+                    &.fl {
+                        padding: 0.8rem 1.4rem;
+                        margin-left: 0;
+                    }
+                    &:hover {
+                        background-color: #444;
+                    }
+                    &:hover ~ .dropdown,
+                    &:hover ~ .sidedrop {
+                        display: none;
+                        animation: none;
+                    }
+                    .fa-angle-down.active:before {
+                        content: "\f106";
+                    }
+                }
+            }
+        }
+    }
+}
