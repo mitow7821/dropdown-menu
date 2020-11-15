@@ -1,8 +1,8 @@
 # Dropdown menu
 
-## 1. Copy div with header class.
+## 1. Copy div with header class
 
-## 2. Add necessary links:
+## 2. Add necessary links in head
 * #### css file
 * #### font awesome cdn
 * #### js file 
